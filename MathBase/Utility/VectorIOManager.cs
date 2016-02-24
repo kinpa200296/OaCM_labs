@@ -7,9 +7,28 @@ namespace MathBase.Utility
 {
     public static class VectorIoManager
     {
+        public static DoubleVector LoadVector(StreamReader reader)
+        {
+            var s = reader.ReadLine();
+            if (s == null)
+            {
+                throw new FormatException("File format doesn't match");
+            }
+            int n;
+            if (!int.TryParse(s, out n))
+            {
+                throw new FormatException("File format doesn't match");
+            }
+            return LoadVector(reader, n);
+        }
+
         public static DoubleVector LoadVector(StreamReader reader, int n)
         {
             var vector = new DoubleVector(n);
+            if (n == 0)
+            {
+                return vector;
+            }
             var s = reader.ReadLine();
             if (s == null)
             {
@@ -34,6 +53,16 @@ namespace MathBase.Utility
 
         public static void SaveVector(StreamWriter writer, DoubleVector vector)
         {
+            foreach (var val in vector)
+            {
+                writer.Write("{0},", val.ToString("F6", CultureInfo.InvariantCulture));
+            }
+            writer.WriteLine();
+        }
+
+        public static void SaveVectorStandalone(StreamWriter writer, DoubleVector vector)
+        {
+            writer.WriteLine("{0}", vector.Length);
             foreach (var val in vector)
             {
                 writer.Write("{0},", val.ToString("F6", CultureInfo.InvariantCulture));

@@ -10,5 +10,8 @@
         <TabItem Header="Лабораторная 1">
             <Frame Source="Lab1.xaml" NavigationUIVisibility="Hidden"/>
         </TabItem>
+        <TabItem Header="Лабораторная 2">
+            <Frame Source="Lab2.xaml" NavigationUIVisibility="Hidden"/>
+        </TabItem>
     </TabControl>
 </Window>

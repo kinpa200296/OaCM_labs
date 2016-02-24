@@ -163,8 +163,8 @@ namespace MathBase
             {
                 throw new ArgumentException("Matrix and vector are inconsistent. Cannot multiply.");
             }
-            var res = new FloatVector(vector.Length);
-            for (int i = 0; i < vector.Length; i++)
+            var res = new FloatVector(matrix.RowCount);
+            for (int i = 0; i < res.Length; i++)
             {
                 res[i] = matrix.GetHorizontalVector(i) * vector;
             }
@@ -177,8 +177,8 @@ namespace MathBase
             {
                 throw new ArgumentException("Matrix and vector are inconsistent. Cannot multiply.");
             }
-            var res = new FloatVector(vector.Length);
-            for (int i = 0; i < vector.Length; i++)
+            var res = new FloatVector(matrix.ColumnCount);
+            for (int i = 0; i < res.Length; i++)
             {
                 res[i] = vector * matrix.GetVerticalVector(i);
             }

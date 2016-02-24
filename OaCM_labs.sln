@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathBase", "MathBase\MathBa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OaCM_labs.Tests", "OaCM_labs.Tests\OaCM_labs.Tests.csproj", "{CEE00952-5927-4916-9BEF-D6EF78E4C3AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kindruk.lab2", "Kindruk.lab2\Kindruk.lab2.csproj", "{5B5D2A76-68A8-47D3-A1AD-A5F952957C27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{CEE00952-5927-4916-9BEF-D6EF78E4C3AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEE00952-5927-4916-9BEF-D6EF78E4C3AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEE00952-5927-4916-9BEF-D6EF78E4C3AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B5D2A76-68A8-47D3-A1AD-A5F952957C27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B5D2A76-68A8-47D3-A1AD-A5F952957C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B5D2A76-68A8-47D3-A1AD-A5F952957C27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B5D2A76-68A8-47D3-A1AD-A5F952957C27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

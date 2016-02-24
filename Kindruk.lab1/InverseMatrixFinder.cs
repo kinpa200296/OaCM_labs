@@ -23,7 +23,7 @@ namespace Kindruk.lab1
                 var newVal = -1;
                 foreach (var val in nonBasis)
                 {
-                    var tmp = DoubleVector.One(n, i)*preResult*source.GetVerticalVector(val);
+                    var tmp = DoubleVector.One(n, i)*preResult*source[val];
                     if (Math.Abs(tmp) > Epsilon)
                     {
                         newVal = val;
@@ -37,13 +37,13 @@ namespace Kindruk.lab1
                 nonBasis.Remove(newVal);
                 basis.Add(newVal);
                 resultReorder[newVal] = i;
-                modifiedSource.SetVerticalVector(i, source.GetVerticalVector(newVal));
-                var z = preResult*modifiedSource.GetVerticalVector(i);
+                modifiedSource[i] = source[newVal];
+                var z = preResult*modifiedSource[i];
                 var tmpVal = z[i];
                 z[i] = -1;
                 var d = (-1.0/tmpVal)*z;
                 var D = DoubleMatrix.One(n);
-                D.SetVerticalVector(i, d);
+                D[i] = d;
                 preResult = D*preResult;
             }
             var result = new DoubleMatrix(n,n);

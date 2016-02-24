@@ -28,7 +28,7 @@ namespace OaCM_labs.Tests
             var matrix = new DoubleMatrix(new double[,] {{0, 2, 1}, {0, 1, 1}, {1, 1, 1}});
             var answer = new DoubleMatrix(new double[,] {{0, -1, 1}, {1, -1, 0}, {-1, 2, 0}});
             var result = InverseMatrixFinder.Find(matrix);
-            Assert.IsTrue(CheckAlmostEqual(result, answer));
+            Assert.IsTrue(CheckAlmostEqual(answer, result));
         }
 
         [TestMethod]
@@ -37,7 +37,7 @@ namespace OaCM_labs.Tests
             var matrix = new DoubleMatrix(new double[,] {{2}});
             var answer = new DoubleMatrix(new[,] {{0.5}});
             var result = InverseMatrixFinder.Find(matrix);
-            Assert.IsTrue(CheckAlmostEqual(result, answer));
+            Assert.IsTrue(CheckAlmostEqual(answer, result));
         }
 
         [TestMethod]
@@ -46,7 +46,7 @@ namespace OaCM_labs.Tests
             var matrix = new DoubleMatrix(new double[,] {{-3, 0, 2}, {3, -1, 0}, {-2, 0, 1}});
             var answer = new DoubleMatrix(new double[,] {{1, 0, -2}, {3, -1, -6}, {2, 0, -3}});
             var result = InverseMatrixFinder.Find(matrix);
-            Assert.IsTrue(CheckAlmostEqual(result, answer));
+            Assert.IsTrue(CheckAlmostEqual(answer, result));
         }
 
         [TestMethod]
@@ -55,7 +55,7 @@ namespace OaCM_labs.Tests
             var matrix = new DoubleMatrix(new double[,] {{-1, 2, 1}, {1, 1, 1}, {3, -1, 1}});
             var answer = new DoubleMatrix(new[,] {{-1, 1.5, -0.5}, {-1, 2, -1}, {2, -2.5, 1.5}});
             var result = InverseMatrixFinder.Find(matrix);
-            Assert.IsTrue(CheckAlmostEqual(result, answer));
+            Assert.IsTrue(CheckAlmostEqual(answer, result));
         }
 
         [TestMethod]
@@ -64,7 +64,7 @@ namespace OaCM_labs.Tests
             var matrix = new DoubleMatrix(new double[,] {{-3, -2, 1}, {1, 1, 0}, {0, -1, 0}});
             var answer = new DoubleMatrix(new double[,] {{0, 1, 1}, {0, 0, -1}, {1, 3, 1}});
             var result = InverseMatrixFinder.Find(matrix);
-            Assert.IsTrue(CheckAlmostEqual(result, answer));
+            Assert.IsTrue(CheckAlmostEqual(answer, result));
         }
 
         [TestMethod]

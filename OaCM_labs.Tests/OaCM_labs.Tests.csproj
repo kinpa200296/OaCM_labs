@@ -51,6 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Lab1Tests.cs" />
+    <Compile Include="Lab2Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,10 +59,19 @@
       <Project>{1ee1a5f7-e0db-4ead-b742-237532dd6cf8}</Project>
       <Name>Kindruk.lab1</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Kindruk.lab2\Kindruk.lab2.csproj">
+      <Project>{5b5d2a76-68a8-47d3-a1ad-a5f952957c27}</Project>
+      <Name>Kindruk.lab2</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MathBase\MathBase.csproj">
       <Project>{33be65e5-0cbf-4a46-af6b-9fe08a84685f}</Project>
       <Name>MathBase</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="lab2_tests\sample_in.csv" />
+    <None Include="lab2_tests\sample_out.csv" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
@@ -83,6 +93,13 @@
   </Choose>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>mkdir $(TargetDir)\tests
+copy $(ProjectDir)\lab2_tests $(TargetDir)\tests</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>del $(TargetDir)\tests /Q</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
