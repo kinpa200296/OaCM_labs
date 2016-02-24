@@ -41,7 +41,7 @@ namespace Kindruk.lab1
                 var z = preResult*modifiedSource[i];
                 var tmpVal = z[i];
                 z[i] = -1;
-                var d = (-1.0/tmpVal)*z;
+                var d = -1.0/tmpVal*z;
                 var D = DoubleMatrix.One(n);
                 D[i] = d;
                 preResult = D*preResult;

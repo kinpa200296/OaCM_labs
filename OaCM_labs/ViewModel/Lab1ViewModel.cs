@@ -1,8 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Input;
+﻿using System.IO;
 using Kindruk.lab1;
 using MathBase;
 using MathBase.Utility;
@@ -26,55 +22,34 @@ namespace OaCM_labs.ViewModel
 
         #region commands
 
-        public ICommand DoAction
-        {
-            get { return new RelayCommand(DoActionExecute);}
-        }
-
         #endregion
 
         #region methods
 
-        private async void DoActionExecute()
+        protected override void DoActionBodyExecute()
         {
-            ButtonVisibility = Visibility.Collapsed;
-            ProgressBarVisibility = Visibility.Visible;
-            try
+            DoubleMatrix matrix;
+            using (var file = File.OpenRead(InputFile))
             {
-                DoubleMatrix matrix;
-                using (var file = File.OpenRead(InputFile))
+                using (var reader = new StreamReader(file))
                 {
-                    using (var reader = new StreamReader(file))
-                    {
-                        matrix = MatrixIoManager.LoadSquareMatrix(reader);
-                    }
-                }
-                await Task.Delay(500);
-                var inverseMatrix =
-                    await Task<DoubleMatrix>.Factory.StartNew(() => { return InverseMatrixFinder.Find(matrix); });
-                using (var file = File.OpenWrite(OutputFile))
-                {
-                    using (var writer = new StreamWriter(file))
-                    {
-                        if (inverseMatrix.RowCount == 0)
-                        {
-                            writer.WriteLine("Impossible to find inverse matrix.");
-                        }
-                        else
-                        {
-                            MatrixIoManager.SaveSquareMatrixStandalone(writer, inverseMatrix);
-                        }
-                    }
+                    matrix = MatrixIoManager.LoadSquareMatrix(reader);
                 }
             }
-            catch (Exception e)
+            var inverseMatrix = InverseMatrixFinder.Find(matrix);
+            using (var file = File.OpenWrite(OutputFile))
             {
-                MessageBox.Show(e.Message);
-            }
-            finally
-            {
-                ButtonVisibility = Visibility.Visible;
-                ProgressBarVisibility = Visibility.Collapsed;
+                using (var writer = new StreamWriter(file))
+                {
+                    if (inverseMatrix.RowCount == 0)
+                    {
+                        writer.WriteLine("Impossible to find inverse matrix.");
+                    }
+                    else
+                    {
+                        MatrixIoManager.SaveSquareMatrixStandalone(writer, inverseMatrix);
+                    }
+                }
             }
         }
 

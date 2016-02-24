@@ -96,7 +96,7 @@ namespace Kindruk.lab2
                         var d = new DoubleVector(z);
                         var tmpVal = d[index];
                         d[index] = -1;
-                        d = (-1.0 / tmpVal) * d;
+                        d = -1.0/tmpVal*d;
                         var D = DoubleMatrix.One(basisMatrix.RowCount);
                         D[index] = d;
                         reversedBasisMatrix = D*reversedBasisMatrix;

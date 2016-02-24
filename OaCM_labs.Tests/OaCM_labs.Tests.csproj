@@ -95,10 +95,15 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>mkdir $(TargetDir)\tests
-copy $(ProjectDir)\lab2_tests $(TargetDir)\tests</PostBuildEvent>
+mkdir $(TargetDir)\tests\lab1
+mkdir $(TargetDir)\tests\lab2
+copy $(ProjectDir)\tests\lab1 $(TargetDir)\tests\lab1
+copy $(ProjectDir)\tests\lab2 $(TargetDir)\tests\lab2</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>del $(TargetDir)\tests /Q</PreBuildEvent>
+    <PreBuildEvent>del $(TargetDir)\tests\lab1 /Q /S
+del $(TargetDir)\tests\lab2 /Q /S
+del $(TargetDir)\tests\ /Q /S</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using Microsoft.Win32;
@@ -76,6 +78,11 @@ namespace OaCM_labs.ViewModel
             get { return new RelayCommand(SaveFileDialogExecute); }
         }
 
+        public ICommand DoAction
+        {
+            get { return new RelayCommand(DoActionExecute); }
+        }
+
         #endregion
 
         #region methods
@@ -106,6 +113,31 @@ namespace OaCM_labs.ViewModel
             };
             dialog.ShowDialog();
             OutputFile = dialog.FileName;
+        }
+
+        protected virtual void DoActionBodyExecute()
+        {
+
+        }
+
+        private async void DoActionExecute()
+        {
+            ButtonVisibility = Visibility.Collapsed;
+            ProgressBarVisibility = Visibility.Visible;
+            try
+            {
+                await Task.Delay(500);
+                await Task.Factory.StartNew(DoActionBodyExecute);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                ButtonVisibility = Visibility.Visible;
+                ProgressBarVisibility = Visibility.Collapsed;
+            }
         }
 
         #endregion

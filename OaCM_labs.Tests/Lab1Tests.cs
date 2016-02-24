@@ -1,6 +1,8 @@
 ﻿using System;
+using System.IO;
 using Kindruk.lab1;
 using MathBase;
+using MathBase.Utility;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace OaCM_labs.Tests
@@ -22,65 +24,78 @@ namespace OaCM_labs.Tests
             return result;
         }
 
+        private void Check(string inputFile, string answerFile)
+        {
+            DoubleMatrix matrix;
+            using (var file = File.OpenRead(inputFile))
+            {
+                using (var reader = new StreamReader(file))
+                {
+                    matrix = MatrixIoManager.LoadSquareMatrix(reader);
+                }
+            }
+
+            var result = InverseMatrixFinder.Find(matrix);
+
+            DoubleMatrix answer;
+            using (var file = File.OpenRead(answerFile))
+            {
+                using (var reader = new StreamReader(file))
+                {
+                    answer = MatrixIoManager.LoadSquareMatrix(reader);
+                }
+            }
+
+            Assert.IsTrue(CheckAlmostEqual(answer, result));
+        }
+
         [TestMethod]
         public void Test1()
         {
-            var matrix = new DoubleMatrix(new double[,] {{0, 2, 1}, {0, 1, 1}, {1, 1, 1}});
-            var answer = new DoubleMatrix(new double[,] {{0, -1, 1}, {1, -1, 0}, {-1, 2, 0}});
-            var result = InverseMatrixFinder.Find(matrix);
-            Assert.IsTrue(CheckAlmostEqual(answer, result));
+            var dir = Directory.GetCurrentDirectory();
+            Check(dir + "\\tests\\lab1\\test1.csv", dir + "\\tests\\lab1\\ans1.csv");
         }
 
         [TestMethod]
         public void Test2()
         {
-            var matrix = new DoubleMatrix(new double[,] {{2}});
-            var answer = new DoubleMatrix(new[,] {{0.5}});
-            var result = InverseMatrixFinder.Find(matrix);
-            Assert.IsTrue(CheckAlmostEqual(answer, result));
+            var dir = Directory.GetCurrentDirectory();
+            Check(dir + "\\tests\\lab1\\test2.csv", dir + "\\tests\\lab1\\ans2.csv");
         }
 
         [TestMethod]
         public void Test3()
         {
-            var matrix = new DoubleMatrix(new double[,] {{-3, 0, 2}, {3, -1, 0}, {-2, 0, 1}});
-            var answer = new DoubleMatrix(new double[,] {{1, 0, -2}, {3, -1, -6}, {2, 0, -3}});
-            var result = InverseMatrixFinder.Find(matrix);
-            Assert.IsTrue(CheckAlmostEqual(answer, result));
+            var dir = Directory.GetCurrentDirectory();
+            Check(dir + "\\tests\\lab1\\test3.csv", dir + "\\tests\\lab1\\ans3.csv");
         }
 
         [TestMethod]
         public void Test4()
         {
-            var matrix = new DoubleMatrix(new double[,] {{-1, 2, 1}, {1, 1, 1}, {3, -1, 1}});
-            var answer = new DoubleMatrix(new[,] {{-1, 1.5, -0.5}, {-1, 2, -1}, {2, -2.5, 1.5}});
-            var result = InverseMatrixFinder.Find(matrix);
-            Assert.IsTrue(CheckAlmostEqual(answer, result));
+            var dir = Directory.GetCurrentDirectory();
+            Check(dir + "\\tests\\lab1\\test4.csv", dir + "\\tests\\lab1\\ans4.csv");
         }
 
         [TestMethod]
         public void Test5()
         {
-            var matrix = new DoubleMatrix(new double[,] {{-3, -2, 1}, {1, 1, 0}, {0, -1, 0}});
-            var answer = new DoubleMatrix(new double[,] {{0, 1, 1}, {0, 0, -1}, {1, 3, 1}});
-            var result = InverseMatrixFinder.Find(matrix);
-            Assert.IsTrue(CheckAlmostEqual(answer, result));
+            var dir = Directory.GetCurrentDirectory();
+            Check(dir + "\\tests\\lab1\\test5.csv", dir + "\\tests\\lab1\\ans5.csv");
         }
 
         [TestMethod]
-        public void TestNoSolution1()
+        public void Test6()
         {
-            var matrix = new DoubleMatrix(new double[,] {{0, 0, 0}, {2, 2, 8}, {1, 1, 1}});
-            var result = InverseMatrixFinder.Find(matrix);
-            Assert.IsTrue(result.RowCount == 0 && result.ColumnCount == 0);
+            var dir = Directory.GetCurrentDirectory();
+            Check(dir + "\\tests\\lab1\\test6.csv", dir + "\\tests\\lab1\\ans6.csv");
         }
 
         [TestMethod]
-        public void TestNoSolution2()
+        public void Test7()
         {
-            var matrix = new DoubleMatrix(new[,] {{2, 4, 1}, {0.5, 1, 0.25}, {11, 3, 24}});
-            var result = InverseMatrixFinder.Find(matrix);
-            Assert.IsTrue(result.RowCount == 0 && result.ColumnCount == 0);
+            var dir = Directory.GetCurrentDirectory();
+            Check(dir + "\\tests\\lab1\\test7.csv", dir + "\\tests\\lab1\\ans7.csv");
         }
     }
 }

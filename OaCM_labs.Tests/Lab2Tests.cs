@@ -57,63 +57,63 @@ namespace OaCM_labs.Tests
         public void Test0()
         {
             var dir = Directory.GetCurrentDirectory();
-            Check(dir + "\\tests\\sample_in.csv", dir + "\\tests\\sample_out.csv");
+            Check(dir + "\\tests\\lab2\\sample_in.csv", dir + "\\tests\\lab2\\sample_out.csv");
         }
 
         [TestMethod]
         public void Test1()
         {
             var dir = Directory.GetCurrentDirectory();
-            Check(dir + "\\tests\\test1.csv", dir + "\\tests\\ans1.csv");
+            Check(dir + "\\tests\\lab2\\test1.csv", dir + "\\tests\\lab2\\ans1.csv");
         }
 
         [TestMethod]
         public void Test2()
         {
             var dir = Directory.GetCurrentDirectory();
-            Check(dir + "\\tests\\test2.csv", dir + "\\tests\\ans2.csv");
+            Check(dir + "\\tests\\lab2\\test2.csv", dir + "\\tests\\lab2\\ans2.csv");
         }
 
         [TestMethod]
         public void Test3()
         {
             var dir = Directory.GetCurrentDirectory();
-            Check(dir + "\\tests\\test3.csv", dir + "\\tests\\ans3.csv");
+            Check(dir + "\\tests\\lab2\\test3.csv", dir + "\\tests\\lab2\\ans3.csv");
         }
 
         [TestMethod]
         public void Test4()
         {
             var dir = Directory.GetCurrentDirectory();
-            Check(dir + "\\tests\\test4.csv", dir + "\\tests\\ans4.csv");
+            Check(dir + "\\tests\\lab2\\test4.csv", dir + "\\tests\\lab2\\ans4.csv");
         }
 
         [TestMethod]
         public void Test5()
         {
             var dir = Directory.GetCurrentDirectory();
-            Check(dir + "\\tests\\test5.csv", dir + "\\tests\\ans5.csv");
+            Check(dir + "\\tests\\lab2\\test5.csv", dir + "\\tests\\lab2\\ans5.csv");
         }
 
         [TestMethod]
         public void Test6()
         {
             var dir = Directory.GetCurrentDirectory();
-            Check(dir + "\\tests\\test6.csv", dir + "\\tests\\ans6.csv");
+            Check(dir + "\\tests\\lab2\\test6.csv", dir + "\\tests\\lab2\\ans6.csv");
         }
 
         [TestMethod]
         public void Test7()
         {
             var dir = Directory.GetCurrentDirectory();
-            Check(dir + "\\tests\\test7.csv", dir + "\\tests\\ans7.csv");
+            Check(dir + "\\tests\\lab2\\test7.csv", dir + "\\tests\\lab2\\ans7.csv");
         }
 
         [TestMethod]
         public void Test8()
         {
             var dir = Directory.GetCurrentDirectory();
-            Check(dir + "\\tests\\test8.csv", dir + "\\tests\\ans8.csv");
+            Check(dir + "\\tests\\lab2\\test8.csv", dir + "\\tests\\lab2\\ans8.csv");
         }
     }
 }
