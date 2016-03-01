@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Kindruk.lab1;
 using MathBase;
 
@@ -9,13 +10,46 @@ namespace Kindruk.lab2
     {
         public const double Epsilon = 1e-6;
 
+        public static bool Equals(DoubleVector v1, DoubleVector v2)
+        {
+            return v1.Length == v2.Length && (v1 - v2).All(val => Math.Abs(val) < Math.Sqrt(Epsilon));
+        }
+
+        public static bool Equals(DoubleMatrix m1, DoubleMatrix m2)
+        {
+            return m1.RowCount == m2.RowCount && m1.ColumnCount == m2.ColumnCount &&
+                   (m1 - m2).Select(v => v.All(val => Math.Abs(val) < Epsilon)).All(val => val);
+        }
+
         public static DoubleVector Solve(DoubleMatrix restrictions, DoubleVector restrictionsValue, DoubleVector values,
+            DoubleVector startingResult)
+        {
+            if (restrictions.RowCount != restrictionsValue.Length)
+                throw new ArgumentException("Restrictions dimensions mismatch");
+
+            if (restrictions.ColumnCount != startingResult.Length)
+                throw new ArgumentException("Variables count mismatch");
+
+            if (startingResult.Length != values.Length)
+                throw new ArgumentException("Bad target function");
+
+            if (startingResult.Count(val => val > Epsilon) != restrictions.RowCount)
+                throw new ArgumentException("Bad basis");
+
+            if (startingResult.Any(val => val < -Epsilon))
+                throw new ArgumentException("Bad plan! Starting result has negative values");
+
+            if (!Equals(restrictions*startingResult, restrictionsValue))
+                throw new ArgumentException("Bad plan! Restrictions are not matched");
+
+            return _solve(restrictions, restrictionsValue, values, startingResult);
+        }
+
+        private static DoubleVector _solve(DoubleMatrix restrictions, DoubleVector restrictionsValue, DoubleVector values,
             DoubleVector startingResult)
         {
             var result = new DoubleVector(startingResult);
 
-            //var nonBasis = new SortedSet<int>();
-            //var basis = new SortedSet<int>();
             var nonBasis = new HashSet<int>();
             var basis = new HashSet<int>();
             for (int i = 0; i < result.Length; i++)
@@ -40,6 +74,8 @@ namespace Kindruk.lab2
                 index++;
             }
             var reversedBasisMatrix = InverseMatrixFinder.Find(basisMatrix);
+            if (reversedBasisMatrix.RowCount != basisMatrix.RowCount)
+                throw new ArgumentException("Possible linear dependency! Check restrictions");
 
             var done = false;
 
@@ -92,7 +128,6 @@ namespace Kindruk.lab2
                     {
                         basisMatrix[index] = restrictions[newVal];
                         basisValues[index] = values[newVal];
-                        //reversedBasisMatrix = InverseMatrixFinder.Find(basisMatrix);
                         var d = new DoubleVector(z);
                         var tmpVal = d[index];
                         d[index] = -1;

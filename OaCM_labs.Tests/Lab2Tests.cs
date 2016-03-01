@@ -16,7 +16,7 @@ namespace OaCM_labs.Tests
             var result = true;
             foreach (var val in difference)
             {
-                result = result && Math.Abs(val) < SimplexMethodSolver.Epsilon;
+                result = result && Math.Abs(val) < Math.Sqrt(SimplexMethodSolver.Epsilon);
             }
             return result;
         }
@@ -96,6 +96,7 @@ namespace OaCM_labs.Tests
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ArgumentException), "Bad plan! Restrictions are not matched")]
         public void Test6()
         {
             var dir = Directory.GetCurrentDirectory();
@@ -110,10 +111,26 @@ namespace OaCM_labs.Tests
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ArgumentException), "Bad plan! Restrictions are not matched")]
         public void Test8()
         {
             var dir = Directory.GetCurrentDirectory();
             Check(dir + "\\tests\\lab2\\test8.csv", dir + "\\tests\\lab2\\ans8.csv");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException), "Possible linear dependency! Check restrictions")]
+        public void Test9()
+        {
+            var dir = Directory.GetCurrentDirectory();
+            Check(dir + "\\tests\\lab2\\test9.csv", dir + "\\tests\\lab2\\ans9.csv");
+        }
+
+        [TestMethod]
+        public void Test10()
+        {
+            var dir = Directory.GetCurrentDirectory();
+            Check(dir + "\\tests\\lab2\\test10.csv", dir + "\\tests\\lab2\\ans10.csv");
         }
     }
 }
