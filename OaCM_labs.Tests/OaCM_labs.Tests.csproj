@@ -68,10 +68,55 @@
       <Name>MathBase</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="lab2_tests\sample_in.csv" />
-    <None Include="lab2_tests\sample_out.csv" />
+    <None Include="tests\lab1\ans1.csv" />
+    <None Include="tests\lab1\ans2.csv" />
+    <None Include="tests\lab1\ans3.csv" />
+    <None Include="tests\lab1\ans4.csv" />
+    <None Include="tests\lab1\ans5.csv" />
+    <None Include="tests\lab1\ans6.csv" />
+    <None Include="tests\lab1\ans7.csv" />
+    <None Include="tests\lab1\test1.csv" />
+    <None Include="tests\lab1\test2.csv" />
+    <None Include="tests\lab1\test3.csv" />
+    <None Include="tests\lab1\test4.csv" />
+    <None Include="tests\lab1\test5.csv" />
+    <None Include="tests\lab1\test6.csv" />
+    <None Include="tests\lab1\test7.csv" />
+    <None Include="tests\lab2\ans1.csv" />
+    <None Include="tests\lab2\ans10.csv" />
+    <None Include="tests\lab2\ans11.csv" />
+    <None Include="tests\lab2\ans12.csv" />
+    <None Include="tests\lab2\ans13.csv" />
+    <None Include="tests\lab2\ans14.csv" />
+    <None Include="tests\lab2\ans15.csv" />
+    <None Include="tests\lab2\ans16.csv" />
+    <None Include="tests\lab2\ans2.csv" />
+    <None Include="tests\lab2\ans3.csv" />
+    <None Include="tests\lab2\ans4.csv" />
+    <None Include="tests\lab2\ans5.csv" />
+    <None Include="tests\lab2\ans6.csv" />
+    <None Include="tests\lab2\ans7.csv" />
+    <None Include="tests\lab2\ans8.csv" />
+    <None Include="tests\lab2\ans9.csv" />
+    <None Include="tests\lab2\sample_in.csv" />
+    <None Include="tests\lab2\sample_out.csv" />
+    <None Include="tests\lab2\test1.csv" />
+    <None Include="tests\lab2\test10.csv" />
+    <None Include="tests\lab2\test11.csv" />
+    <None Include="tests\lab2\test12.csv" />
+    <None Include="tests\lab2\test13.csv" />
+    <None Include="tests\lab2\test14.csv" />
+    <None Include="tests\lab2\test15.csv" />
+    <None Include="tests\lab2\test16.csv" />
+    <None Include="tests\lab2\test2.csv" />
+    <None Include="tests\lab2\test3.csv" />
+    <None Include="tests\lab2\test4.csv" />
+    <None Include="tests\lab2\test5.csv" />
+    <None Include="tests\lab2\test6.csv" />
+    <None Include="tests\lab2\test7.csv" />
+    <None Include="tests\lab2\test8.csv" />
+    <None Include="tests\lab2\test9.csv" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
