@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OaCM_labs.Tests</RootNamespace>
     <AssemblyName>OaCM_labs.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -16,6 +16,7 @@
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -52,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Lab1Tests.cs" />
     <Compile Include="Lab2Tests.cs" />
+    <Compile Include="Lab3Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -62,6 +64,10 @@
     <ProjectReference Include="..\Kindruk.lab2\Kindruk.lab2.csproj">
       <Project>{5b5d2a76-68a8-47d3-a1ad-a5f952957c27}</Project>
       <Name>Kindruk.lab2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kindruk.lab3\Kindruk.lab3.csproj">
+      <Project>{abe6322f-cc27-4f5d-85d2-0ca5f8ad56fb}</Project>
+      <Name>Kindruk.lab3</Name>
     </ProjectReference>
     <ProjectReference Include="..\MathBase\MathBase.csproj">
       <Project>{33be65e5-0cbf-4a46-af6b-9fe08a84685f}</Project>
@@ -142,12 +148,15 @@
     <PostBuildEvent>mkdir $(TargetDir)\tests
 mkdir $(TargetDir)\tests\lab1
 mkdir $(TargetDir)\tests\lab2
+mkdir $(TargetDir)\tests\lab3
 copy $(ProjectDir)\tests\lab1 $(TargetDir)\tests\lab1
-copy $(ProjectDir)\tests\lab2 $(TargetDir)\tests\lab2</PostBuildEvent>
+copy $(ProjectDir)\tests\lab2 $(TargetDir)\tests\lab2
+copy $(ProjectDir)\tests\lab3 $(TargetDir)\tests\lab3</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>del $(TargetDir)\tests\lab1 /Q /S
 del $(TargetDir)\tests\lab2 /Q /S
+del $(TargetDir)\tests\lab3 /Q /S
 del $(TargetDir)\tests\ /Q /S</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OaCM_labs", "OaCM_labs\OaCM_labs.csproj", "{76A640F0-C824-42B7-9B67-9ED7B12E95F1}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OaCM_labs.Tests", "OaCM_labs.Tests\OaCM_labs.Tests.csproj", "{CEE00952-5927-4916-9BEF-D6EF78E4C3AE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kindruk.lab2", "Kindruk.lab2\Kindruk.lab2.csproj", "{5B5D2A76-68A8-47D3-A1AD-A5F952957C27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kindruk.lab3", "Kindruk.lab3\Kindruk.lab3.csproj", "{ABE6322F-CC27-4F5D-85D2-0CA5F8AD56FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{5B5D2A76-68A8-47D3-A1AD-A5F952957C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B5D2A76-68A8-47D3-A1AD-A5F952957C27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B5D2A76-68A8-47D3-A1AD-A5F952957C27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABE6322F-CC27-4F5D-85D2-0CA5F8AD56FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABE6322F-CC27-4F5D-85D2-0CA5F8AD56FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABE6322F-CC27-4F5D-85D2-0CA5F8AD56FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABE6322F-CC27-4F5D-85D2-0CA5F8AD56FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
