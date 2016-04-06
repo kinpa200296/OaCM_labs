@@ -54,6 +54,7 @@
     <Compile Include="Lab1Tests.cs" />
     <Compile Include="Lab2Tests.cs" />
     <Compile Include="Lab3Tests.cs" />
+    <Compile Include="Lab4Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -68,6 +69,10 @@
     <ProjectReference Include="..\Kindruk.lab3\Kindruk.lab3.csproj">
       <Project>{abe6322f-cc27-4f5d-85d2-0ca5f8ad56fb}</Project>
       <Name>Kindruk.lab3</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kindruk.lab4\Kindruk.lab4.csproj">
+      <Project>{4cf2a8a1-c2bd-4229-89e3-44f2258ef437}</Project>
+      <Name>Kindruk.lab4</Name>
     </ProjectReference>
     <ProjectReference Include="..\MathBase\MathBase.csproj">
       <Project>{33be65e5-0cbf-4a46-af6b-9fe08a84685f}</Project>
@@ -123,7 +128,46 @@
     <None Include="tests\lab2\test7.csv" />
     <None Include="tests\lab2\test8.csv" />
     <None Include="tests\lab2\test9.csv" />
+    <None Include="tests\lab3\ans1.csv" />
+    <None Include="tests\lab3\ans10.csv" />
+    <None Include="tests\lab3\ans11.csv" />
+    <None Include="tests\lab3\ans2.csv" />
+    <None Include="tests\lab3\ans3.csv" />
+    <None Include="tests\lab3\ans4.csv" />
+    <None Include="tests\lab3\ans5.csv" />
+    <None Include="tests\lab3\ans6.csv" />
+    <None Include="tests\lab3\ans7.csv" />
+    <None Include="tests\lab3\ans8.csv" />
+    <None Include="tests\lab3\ans9.csv" />
+    <None Include="tests\lab3\test1.csv" />
+    <None Include="tests\lab3\test10.csv" />
+    <None Include="tests\lab3\test11.csv" />
+    <None Include="tests\lab3\test2.csv" />
+    <None Include="tests\lab3\test3.csv" />
+    <None Include="tests\lab3\test4.csv" />
+    <None Include="tests\lab3\test5.csv" />
+    <None Include="tests\lab3\test6.csv" />
+    <None Include="tests\lab3\test7.csv" />
+    <None Include="tests\lab3\test8.csv" />
+    <None Include="tests\lab3\test9.csv" />
+    <None Include="tests\lab4\ans1.csv" />
+    <None Include="tests\lab4\ans2.csv" />
+    <None Include="tests\lab4\ans3.csv" />
+    <None Include="tests\lab4\ans4.csv" />
+    <None Include="tests\lab4\ans5.csv" />
+    <None Include="tests\lab4\ans6.csv" />
+    <None Include="tests\lab4\ans7.csv" />
+    <None Include="tests\lab4\ans8.csv" />
+    <None Include="tests\lab4\test1.csv" />
+    <None Include="tests\lab4\test2.csv" />
+    <None Include="tests\lab4\test3.csv" />
+    <None Include="tests\lab4\test4.csv" />
+    <None Include="tests\lab4\test5.csv" />
+    <None Include="tests\lab4\test6.csv" />
+    <None Include="tests\lab4\test7.csv" />
+    <None Include="tests\lab4\test8.csv" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
@@ -149,14 +193,17 @@
 mkdir $(TargetDir)\tests\lab1
 mkdir $(TargetDir)\tests\lab2
 mkdir $(TargetDir)\tests\lab3
+mkdir $(TargetDir)\tests\lab4
 copy $(ProjectDir)\tests\lab1 $(TargetDir)\tests\lab1
 copy $(ProjectDir)\tests\lab2 $(TargetDir)\tests\lab2
-copy $(ProjectDir)\tests\lab3 $(TargetDir)\tests\lab3</PostBuildEvent>
+copy $(ProjectDir)\tests\lab3 $(TargetDir)\tests\lab3
+copy $(ProjectDir)\tests\lab4 $(TargetDir)\tests\lab4</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>del $(TargetDir)\tests\lab1 /Q /S
 del $(TargetDir)\tests\lab2 /Q /S
 del $(TargetDir)\tests\lab3 /Q /S
+del $(TargetDir)\tests\lab4 /Q /S
 del $(TargetDir)\tests\ /Q /S</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
