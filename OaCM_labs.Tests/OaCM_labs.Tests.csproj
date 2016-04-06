@@ -151,6 +151,10 @@
     <None Include="tests\lab3\test8.csv" />
     <None Include="tests\lab3\test9.csv" />
     <None Include="tests\lab4\ans1.csv" />
+    <None Include="tests\lab4\ans10.csv" />
+    <None Include="tests\lab4\ans11.csv" />
+    <None Include="tests\lab4\ans12.csv" />
+    <None Include="tests\lab4\ans13.csv" />
     <None Include="tests\lab4\ans2.csv" />
     <None Include="tests\lab4\ans3.csv" />
     <None Include="tests\lab4\ans4.csv" />
@@ -158,7 +162,12 @@
     <None Include="tests\lab4\ans6.csv" />
     <None Include="tests\lab4\ans7.csv" />
     <None Include="tests\lab4\ans8.csv" />
+    <None Include="tests\lab4\ans9.csv" />
     <None Include="tests\lab4\test1.csv" />
+    <None Include="tests\lab4\test10.csv" />
+    <None Include="tests\lab4\test11.csv" />
+    <None Include="tests\lab4\test12.csv" />
+    <None Include="tests\lab4\test13.csv" />
     <None Include="tests\lab4\test2.csv" />
     <None Include="tests\lab4\test3.csv" />
     <None Include="tests\lab4\test4.csv" />
@@ -166,6 +175,7 @@
     <None Include="tests\lab4\test6.csv" />
     <None Include="tests\lab4\test7.csv" />
     <None Include="tests\lab4\test8.csv" />
+    <None Include="tests\lab4\test9.csv" />
   </ItemGroup>
   <ItemGroup />
   <Choose>

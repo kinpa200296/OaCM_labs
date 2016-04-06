@@ -108,5 +108,40 @@ namespace OaCM_labs.Tests
             var dir = Directory.GetCurrentDirectory();
             Check(dir + "\\tests\\lab4\\test8.csv", dir + "\\tests\\lab4\\ans8.csv");
         }
+
+        [TestMethod]
+        public void Test9()
+        {
+            var dir = Directory.GetCurrentDirectory();
+            Check(dir + "\\tests\\lab4\\test9.csv", dir + "\\tests\\lab4\\ans9.csv");
+        }
+
+        [TestMethod]
+        public void Test10()
+        {
+            var dir = Directory.GetCurrentDirectory();
+            Check(dir + "\\tests\\lab4\\test10.csv", dir + "\\tests\\lab4\\ans10.csv");
+        }
+
+        [TestMethod]
+        public void Test11()
+        {
+            var dir = Directory.GetCurrentDirectory();
+            Check(dir + "\\tests\\lab4\\test11.csv", dir + "\\tests\\lab4\\ans11.csv");
+        }
+
+        [TestMethod]
+        public void Test12()
+        {
+            var dir = Directory.GetCurrentDirectory();
+            Check(dir + "\\tests\\lab4\\test12.csv", dir + "\\tests\\lab4\\ans12.csv");
+        }
+
+        [TestMethod]
+        public void Test13()
+        {
+            var dir = Directory.GetCurrentDirectory();
+            Check(dir + "\\tests\\lab4\\test13.csv", dir + "\\tests\\lab4\\ans13.csv");
+        }
     }
 }

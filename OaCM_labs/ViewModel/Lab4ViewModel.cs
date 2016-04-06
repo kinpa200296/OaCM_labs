@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using Kindruk.lab4;
 using MathBase;
 using MathBase.Utility;
@@ -52,6 +53,7 @@ namespace OaCM_labs.ViewModel
                     else
                     {
                         MatrixIoManager.SaveMatrixStandalone(writer, result);
+                        writer.WriteLine("{0:F6}", MatrixTransportTaskSolver.CalculateTargetFunction(cost, result));
                     }
                 }
             }
