@@ -78,7 +78,7 @@ namespace MathBase
             {
                 throw new ArgumentException("Matrix and vector sizes do not match");
             }
-            for (var i = 0; i < ColumnCount; i++)
+            for (var i = 0; i < RowCount; i++)
             {
                 _data[i, columnNumber] = vector[i];
             }
