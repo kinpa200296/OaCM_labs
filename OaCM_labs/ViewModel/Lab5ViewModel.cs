@@ -32,6 +32,8 @@ namespace OaCM_labs.ViewModel
             DoubleVector valuesVector;
             DoubleMatrix valuesMatrix;
             DoubleVector startingResult;
+            DoubleVector bearingIndexes;
+            DoubleVector improvedIndexes;
             using (var file = File.OpenRead(InputFile))
             {
                 using (var reader = new StreamReader(file))
@@ -41,10 +43,12 @@ namespace OaCM_labs.ViewModel
                     valuesVector = VectorIoManager.LoadVector(reader);
                     valuesMatrix = MatrixIoManager.LoadMatrix(reader);
                     startingResult = VectorIoManager.LoadVector(reader, restrictions.ColumnCount);
+                    bearingIndexes = VectorIoManager.LoadVector(reader, restrictions.ColumnCount);
+                    improvedIndexes = VectorIoManager.LoadVector(reader, restrictions.ColumnCount);
                 }
             }
             var result = SquareTaskSolver.Solve(restrictions, restrictionsValue, valuesVector, valuesMatrix,
-                startingResult);
+                startingResult, bearingIndexes, improvedIndexes);
             using (var file = File.OpenWrite(OutputFile))
             {
                 using (var writer = new StreamWriter(file))

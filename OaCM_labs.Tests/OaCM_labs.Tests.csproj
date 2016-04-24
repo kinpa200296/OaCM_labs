@@ -187,12 +187,18 @@
     <None Include="tests\lab5\ans4.csv" />
     <None Include="tests\lab5\ans5.csv" />
     <None Include="tests\lab5\ans6.csv" />
+    <None Include="tests\lab5\ans7.csv" />
+    <None Include="tests\lab5\ans8.csv" />
+    <None Include="tests\lab5\ans9.csv" />
     <None Include="tests\lab5\test1.csv" />
     <None Include="tests\lab5\test2.csv" />
     <None Include="tests\lab5\test3.csv" />
     <None Include="tests\lab5\test4.csv" />
     <None Include="tests\lab5\test5.csv" />
     <None Include="tests\lab5\test6.csv" />
+    <None Include="tests\lab5\test7.csv" />
+    <None Include="tests\lab5\test8.csv" />
+    <None Include="tests\lab5\test9.csv" />
   </ItemGroup>
   <ItemGroup />
   <Choose>

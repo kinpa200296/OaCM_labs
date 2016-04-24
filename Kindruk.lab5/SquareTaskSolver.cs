@@ -46,7 +46,8 @@ namespace Kindruk.lab5
         }
 
         public static DoubleVector Solve(DoubleMatrix restrictions, DoubleVector restrictionsValue,
-            DoubleVector valuesVector, DoubleMatrix valuesMatrix, DoubleVector startingResult)
+            DoubleVector valuesVector, DoubleMatrix valuesMatrix, DoubleVector startingResult, 
+            DoubleVector bearingIndexes, DoubleVector improvedIndexes)
         {
             if (restrictions.RowCount != restrictionsValue.Length)
                 throw new ArgumentException("Restrictions dimensions mismatch");
@@ -67,7 +68,7 @@ namespace Kindruk.lab5
                 restrictions.ColumnCount != valuesMatrix.ColumnCount)
                 throw new ArgumentException("Bad target function matrix");
 
-            if (startingResult.Count(val => val > Epsilon) != restrictions.RowCount)
+            if (bearingIndexes.Count(val => val > Epsilon) != restrictions.RowCount)
                 throw new ArgumentException("Bad basis");
 
             if (startingResult.Any(val => val < -Epsilon))
@@ -76,13 +77,16 @@ namespace Kindruk.lab5
             if (!Equals(restrictions*startingResult, restrictionsValue))
                 throw new ArgumentException("Bad plan! Restrictions are not matched");
 
-            return _solve(restrictions, restrictionsValue, valuesVector, valuesMatrix, startingResult);
+            return _solve(restrictions, restrictionsValue, valuesVector, valuesMatrix, startingResult, 
+                bearingIndexes, improvedIndexes);
         }
 
         private static DoubleVector _solve(DoubleMatrix restrictions, DoubleVector restrictionsValue,
-            DoubleVector valuesVector, DoubleMatrix valuesMatrix, DoubleVector startingResult)
+            DoubleVector valuesVector, DoubleMatrix valuesMatrix, DoubleVector startingResult, 
+            DoubleVector bearingIndexes, DoubleVector improvedIndexes)
         {
-            var solver = new Solver(restrictions, restrictionsValue, valuesVector, valuesMatrix, startingResult);
+            var solver = new Solver(restrictions, restrictionsValue, valuesVector, valuesMatrix, startingResult,
+                bearingIndexes, improvedIndexes);
             solver.InvokeSolve();
             return solver.Result;
         }
@@ -90,7 +94,7 @@ namespace Kindruk.lab5
         private class Solver
         {
             public DoubleMatrix Restrictions, ValuesMatrix, BearingRestrictions, BearingReversedRestrictions;
-            public DoubleVector RestrictionsValue, ValuesVector, StartingResult, Result, Delta, Direction;
+            public DoubleVector RestrictionsValue, ValuesVector, StartingResult, BearingIndexes, ImprovedIndexes, Result, Delta, Direction;
             public HashSet<int> NonBasis, BearingBasis, ImprovedBasis;
 
             private bool _done;
@@ -98,13 +102,15 @@ namespace Kindruk.lab5
             private double _theta0;
 
             public Solver(DoubleMatrix restrictions, DoubleVector restrictionsValue, DoubleVector valuesVector,
-                DoubleMatrix valuesMatrix, DoubleVector startingResult)
+                DoubleMatrix valuesMatrix, DoubleVector startingResult, DoubleVector bearingIndexes, DoubleVector improvedIndexes)
             {
                 Restrictions = restrictions;
                 RestrictionsValue = restrictionsValue;
                 ValuesVector = valuesVector;
                 ValuesMatrix = valuesMatrix;
                 StartingResult = startingResult;
+                BearingIndexes = bearingIndexes;
+                ImprovedIndexes = improvedIndexes;
 
                 Result = new DoubleVector(StartingResult);
 
@@ -127,14 +133,17 @@ namespace Kindruk.lab5
             {
                 for (var i = 0; i < Result.Length; i++)
                 {
-                    if (Math.Abs(Result[i]) < Epsilon)
+                    if (Math.Abs(ImprovedIndexes[i]) < Epsilon)
                     {
                         NonBasis.Add(i);
                     }
                     else
                     {
-                        BearingBasis.Add(i);
                         ImprovedBasis.Add(i);
+                    }
+                    if (Math.Abs(BearingIndexes[i]) > Epsilon)
+                    {
+                        BearingBasis.Add(i);
                     }
                 }
                 _makeBearingBasis();

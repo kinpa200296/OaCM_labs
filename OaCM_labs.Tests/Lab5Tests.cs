@@ -29,6 +29,8 @@ namespace OaCM_labs.Tests
             DoubleVector valuesVector;
             DoubleMatrix valuesMatrix;
             DoubleVector startingResult;
+            DoubleVector bearingIndexes;
+            DoubleVector improvedIndexes;
             using (var file = File.OpenRead(inputFile))
             {
                 using (var reader = new StreamReader(file))
@@ -38,11 +40,13 @@ namespace OaCM_labs.Tests
                     valuesVector = VectorIoManager.LoadVector(reader);
                     valuesMatrix = MatrixIoManager.LoadMatrix(reader);
                     startingResult = VectorIoManager.LoadVector(reader, restrictions.ColumnCount);
+                    bearingIndexes = VectorIoManager.LoadVector(reader, restrictions.ColumnCount);
+                    improvedIndexes = VectorIoManager.LoadVector(reader, restrictions.ColumnCount);
                 }
             }
 
             var result = SquareTaskSolver.Solve(restrictions, restrictionsValue, valuesVector, valuesMatrix,
-                startingResult);
+                startingResult, bearingIndexes, improvedIndexes);
 
             DoubleVector answer;
             using (var file = File.OpenRead(answerFile))
@@ -99,6 +103,27 @@ namespace OaCM_labs.Tests
         {
             var dir = Directory.GetCurrentDirectory();
             Check(dir + "\\tests\\lab5\\test6.csv", dir + "\\tests\\lab5\\ans6.csv");
+        }
+
+        [TestMethod]
+        public void Test7()
+        {
+            var dir = Directory.GetCurrentDirectory();
+            Check(dir + "\\tests\\lab5\\test7.csv", dir + "\\tests\\lab5\\ans7.csv");
+        }
+
+        [TestMethod]
+        public void Test8()
+        {
+            var dir = Directory.GetCurrentDirectory();
+            Check(dir + "\\tests\\lab5\\test8.csv", dir + "\\tests\\lab5\\ans8.csv");
+        }
+
+        [TestMethod]
+        public void Test9()
+        {
+            var dir = Directory.GetCurrentDirectory();
+            Check(dir + "\\tests\\lab5\\test9.csv", dir + "\\tests\\lab5\\ans9.csv");
         }
     }
 }
