@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using Kindruk.lab3;
 using Kindruk.lab5;
 using MathBase;
 using MathBase.Utility;
@@ -17,7 +16,7 @@ namespace OaCM_labs.Tests
             var result = true;
             foreach (var val in difference)
             {
-                result = result && Math.Abs(val) < Math.Sqrt(DualSimplexMethodSolver.Epsilon);
+                result = result && Math.Abs(val) < Math.Sqrt(SquareTaskSolver.Epsilon);
             }
             return result;
         }

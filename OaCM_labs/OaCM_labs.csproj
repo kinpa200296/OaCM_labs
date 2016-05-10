@@ -74,6 +74,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Lab6.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -88,6 +92,7 @@
     <Compile Include="ViewModel\Lab3ViewModel.cs" />
     <Compile Include="ViewModel\Lab4ViewModel.cs" />
     <Compile Include="ViewModel\Lab5ViewModel.cs" />
+    <Compile Include="ViewModel\Lab6ViewModel.cs" />
     <Compile Include="ViewModel\LabViewModelBase.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
@@ -106,6 +111,9 @@
     </Compile>
     <Compile Include="View\Lab5.xaml.cs">
       <DependentUpon>Lab5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Lab6.xaml.cs">
+      <DependentUpon>Lab6.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -162,6 +170,10 @@
     <ProjectReference Include="..\Kindruk.lab5\Kindruk.lab5.csproj">
       <Project>{EF56F26A-62D0-4AEF-8866-3CFDD65C2202}</Project>
       <Name>Kindruk.lab5</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kindruk.lab6\Kindruk.lab6.csproj">
+      <Project>{11ee72d0-1a19-4643-9922-9987a16c2bb4}</Project>
+      <Name>Kindruk.lab6</Name>
     </ProjectReference>
     <ProjectReference Include="..\MathBase\MathBase.csproj">
       <Project>{33be65e5-0cbf-4a46-af6b-9fe08a84685f}</Project>

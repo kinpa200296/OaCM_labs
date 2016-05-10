@@ -4,7 +4,7 @@ using System.Linq;
 using Kindruk.lab1;
 using MathBase;
 
-namespace Kindruk.lab3
+namespace Kindruk.lab6
 {
     public static class DualSimplexMethodSolver
     {
@@ -77,13 +77,13 @@ namespace Kindruk.lab3
             if (reversedBasisMatrix.RowCount != basisMatrix.RowCount)
                 throw new ArgumentException("Possible linear dependency! Check restrictions");
 
-            dualResult = basisValues*reversedBasisMatrix;
+            dualResult = basisValues * reversedBasisMatrix;
 
             var done = false;
 
             while (!done)
             {
-                var kappa = reversedBasisMatrix*restrictionsValue;
+                var kappa = reversedBasisMatrix * restrictionsValue;
                 index = 0;
                 var oldVal = -1;
                 var k = -1;
@@ -111,18 +111,18 @@ namespace Kindruk.lab3
                     }
                     continue;
                 }
-                var deltaDualResult = DoubleVector.One(basis.Count, k)*reversedBasisMatrix;
-                var mu = deltaDualResult*restrictions;
+                var deltaDualResult = DoubleVector.One(basis.Count, k) * reversedBasisMatrix;
+                var mu = deltaDualResult * restrictions;
                 var sigma = Double.PositiveInfinity;
                 var newVal = -1;
                 foreach (var val in nonBasis)
                 {
                     if (mu[val] < -Epsilon)
                     {
-                        var deltaVal = restrictions[val]*dualResult - values[val];
-                        if (sigma > -(deltaVal/mu[val]))
+                        var deltaVal = restrictions[val] * dualResult - values[val];
+                        if (sigma > -(deltaVal / mu[val]))
                         {
-                            sigma = -(deltaVal/mu[val]);
+                            sigma = -(deltaVal / mu[val]);
                             newVal = val;
                         }
                     }
@@ -130,6 +130,13 @@ namespace Kindruk.lab3
                 if (newVal == -1)
                 {
                     result = new DoubleVector(0);
+                    //index = 0;
+                    //result = new DoubleVector(startingResult.Length);
+                    //foreach (var val in basis)
+                    //{
+                    //    result[val] = kappa[index];
+                    //    index++;
+                    //}
                     done = true;
                     continue;
                 }
@@ -141,13 +148,13 @@ namespace Kindruk.lab3
                     {
                         basisMatrix[index] = restrictions[newVal];
                         basisValues[index] = values[newVal];
-                        var d = reversedBasisMatrix*restrictions[newVal];
+                        var d = reversedBasisMatrix * restrictions[newVal];
                         var tmpVal = d[index];
                         d[index] = -1;
                         d = -1.0 / tmpVal * d;
                         var D = DoubleMatrix.One(basisMatrix.RowCount);
                         D[index] = d;
-                        reversedBasisMatrix = D*reversedBasisMatrix;
+                        reversedBasisMatrix = D * reversedBasisMatrix;
                     }
                     index++;
                 }

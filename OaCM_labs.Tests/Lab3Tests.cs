@@ -80,7 +80,7 @@ namespace OaCM_labs.Tests
         public void Test4()
         {
             var dir = Directory.GetCurrentDirectory();
-            //Check(dir + "\\tests\\lab3\\test4.csv", dir + "\\tests\\lab3\\ans4.csv");
+            Check(dir + "\\tests\\lab3\\test4.csv", dir + "\\tests\\lab3\\ans4.csv");
         }
 
         [TestMethod]
