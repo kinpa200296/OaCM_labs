@@ -25,5 +25,17 @@
         <TabItem Header="Лабораторная 6">
             <Frame Source="Lab6.xaml" NavigationUIVisibility="Hidden"/>
         </TabItem>
+        <TabItem Header="Лабораторная 3x">
+            <Frame Source="Lab3x.xaml" NavigationUIVisibility="Hidden"/>
+        </TabItem>
+        <TabItem Header="Лабораторная 7">
+            <Frame Source="Lab7.xaml" NavigationUIVisibility="Hidden"/>
+        </TabItem>
+        <TabItem Header="Лабораторная 8">
+            <Frame Source="Lab8.xaml" NavigationUIVisibility="Hidden"/>
+        </TabItem>
+        <TabItem Header="Лабораторная 9">
+            <Frame Source="Lab9.xaml" NavigationUIVisibility="Hidden"/>
+        </TabItem>
     </TabControl>
 </Window>

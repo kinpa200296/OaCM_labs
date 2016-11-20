@@ -276,7 +276,7 @@ namespace MathBase
             public bool MoveNext()
             {
                 _index++;
-                return _index < _matrix.RowCount;
+                return _index < _matrix.ColumnCount;
             }
 
             public void Reset()

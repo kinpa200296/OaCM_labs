@@ -66,6 +66,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Lab3x.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Lab4.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -75,6 +79,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Lab6.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Lab7.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Lab8.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Lab9.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -90,9 +106,13 @@
     <Compile Include="ViewModel\Lab1ViewModel.cs" />
     <Compile Include="ViewModel\Lab2ViewModel.cs" />
     <Compile Include="ViewModel\Lab3ViewModel.cs" />
+    <Compile Include="ViewModel\Lab3xViewModel.cs" />
     <Compile Include="ViewModel\Lab4ViewModel.cs" />
     <Compile Include="ViewModel\Lab5ViewModel.cs" />
     <Compile Include="ViewModel\Lab6ViewModel.cs" />
+    <Compile Include="ViewModel\Lab7ViewModel.cs" />
+    <Compile Include="ViewModel\Lab8ViewModel.cs" />
+    <Compile Include="ViewModel\Lab9ViewModel.cs" />
     <Compile Include="ViewModel\LabViewModelBase.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
@@ -106,6 +126,9 @@
     <Compile Include="View\Lab3.xaml.cs">
       <DependentUpon>Lab3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Lab3x.xaml.cs">
+      <DependentUpon>Lab3x.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Lab4.xaml.cs">
       <DependentUpon>Lab4.xaml</DependentUpon>
     </Compile>
@@ -114,6 +137,15 @@
     </Compile>
     <Compile Include="View\Lab6.xaml.cs">
       <DependentUpon>Lab6.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Lab7.xaml.cs">
+      <DependentUpon>Lab7.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Lab8.xaml.cs">
+      <DependentUpon>Lab8.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Lab9.xaml.cs">
+      <DependentUpon>Lab9.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -159,6 +191,10 @@
       <Project>{5b5d2a76-68a8-47d3-a1ad-a5f952957c27}</Project>
       <Name>Kindruk.lab2</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Kindruk.lab3x\Kindruk.lab3x.csproj">
+      <Project>{511a9b0d-7ace-43b9-9ca1-9a79079d54d7}</Project>
+      <Name>Kindruk.lab3x</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Kindruk.lab3\Kindruk.lab3.csproj">
       <Project>{abe6322f-cc27-4f5d-85d2-0ca5f8ad56fb}</Project>
       <Name>Kindruk.lab3</Name>
@@ -174,6 +210,18 @@
     <ProjectReference Include="..\Kindruk.lab6\Kindruk.lab6.csproj">
       <Project>{11ee72d0-1a19-4643-9922-9987a16c2bb4}</Project>
       <Name>Kindruk.lab6</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kindruk.lab7\Kindruk.lab7.csproj">
+      <Project>{fe613e95-6fc2-40b4-87d3-51826ecdd4af}</Project>
+      <Name>Kindruk.lab7</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kindruk.lab8\Kindruk.lab8.csproj">
+      <Project>{d4d49ec4-7dc7-4e05-ae82-b66781c6f088}</Project>
+      <Name>Kindruk.lab8</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kindruk.lab9\Kindruk.lab9.csproj">
+      <Project>{fa6544cb-18bf-4c35-9e94-1ac3bf5bec61}</Project>
+      <Name>Kindruk.lab9</Name>
     </ProjectReference>
     <ProjectReference Include="..\MathBase\MathBase.csproj">
       <Project>{33be65e5-0cbf-4a46-af6b-9fe08a84685f}</Project>

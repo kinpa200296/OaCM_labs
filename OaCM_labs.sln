@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OaCM_labs", "OaCM_labs\OaCM_labs.csproj", "{76A640F0-C824-42B7-9B67-9ED7B12E95F1}"
 EndProject
@@ -20,6 +20,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kindruk.lab5", "Kindruk.lab5\Kindruk.lab5.csproj", "{EF56F26A-62D0-4AEF-8866-3CFDD65C2202}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kindruk.lab6", "Kindruk.lab6\Kindruk.lab6.csproj", "{11EE72D0-1A19-4643-9922-9987A16C2BB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kindruk.lab3x", "Kindruk.lab3x\Kindruk.lab3x.csproj", "{511A9B0D-7ACE-43B9-9CA1-9A79079D54D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kindruk.lab7", "Kindruk.lab7\Kindruk.lab7.csproj", "{FE613E95-6FC2-40B4-87D3-51826ECDD4AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kindruk.lab8", "Kindruk.lab8\Kindruk.lab8.csproj", "{D4D49EC4-7DC7-4E05-AE82-B66781C6F088}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kindruk.lab9", "Kindruk.lab9\Kindruk.lab9.csproj", "{FA6544CB-18BF-4C35-9E94-1AC3BF5BEC61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +71,22 @@ Global
 		{11EE72D0-1A19-4643-9922-9987A16C2BB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11EE72D0-1A19-4643-9922-9987A16C2BB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11EE72D0-1A19-4643-9922-9987A16C2BB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{511A9B0D-7ACE-43B9-9CA1-9A79079D54D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{511A9B0D-7ACE-43B9-9CA1-9A79079D54D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{511A9B0D-7ACE-43B9-9CA1-9A79079D54D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{511A9B0D-7ACE-43B9-9CA1-9A79079D54D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE613E95-6FC2-40B4-87D3-51826ECDD4AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE613E95-6FC2-40B4-87D3-51826ECDD4AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE613E95-6FC2-40B4-87D3-51826ECDD4AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE613E95-6FC2-40B4-87D3-51826ECDD4AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4D49EC4-7DC7-4E05-AE82-B66781C6F088}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4D49EC4-7DC7-4E05-AE82-B66781C6F088}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4D49EC4-7DC7-4E05-AE82-B66781C6F088}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4D49EC4-7DC7-4E05-AE82-B66781C6F088}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA6544CB-18BF-4C35-9E94-1AC3BF5BEC61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA6544CB-18BF-4C35-9E94-1AC3BF5BEC61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA6544CB-18BF-4C35-9E94-1AC3BF5BEC61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA6544CB-18BF-4C35-9E94-1AC3BF5BEC61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
